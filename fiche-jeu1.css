@@ -61,3 +61,67 @@ p{
 .image1 img, .image2 img, .image3 img{width: 230px;height: 230px;display: inline-block;
     margin-right: 30px;border-radius: 15px;
 }
+
+/* Styles pour les écrans de taille moyenne et grande */
+@media screen and (min-width: 768px) {
+    body {
+        width: 100%;
+    }
+
+    header {
+        padding: 20px 0;
+    }
+
+    .logo img {
+        width: 80px;
+        height: 80px;
+    }
+
+    .connect img {
+        width: 90px;
+    }
+
+    .bloc1 img {
+        left: 50px;
+        top: 30px;
+        width: 100%;
+        max-width: 40%;
+        height: auto;
+    }
+
+    .bloc2 ul {
+        bottom: 0;
+        right: 0;
+        max-width: 50%;
+        height: auto;
+    }
+
+    .description {
+        line-height: 1.3em;
+    }
+
+    h2 {
+        left: 50px;
+    }
+
+    p {
+        left: 50px;
+        top: 12px;
+        width: 100%;
+        max-width: 500px;
+    }
+
+    .blocs {
+        padding: 10%;
+    }
+
+    .image1 img,
+    .image2 img,
+    .image3 img {
+        width: 100%;
+        max-width: 230px;
+        height: auto;
+        margin-bottom: 20px;
+    }
+}
+
