@@ -1,3 +1,4 @@
+// add button subscribe to red and green
 const subscribe = document.getElementById('subscribe');
 
 const setColorGreen = () => {
