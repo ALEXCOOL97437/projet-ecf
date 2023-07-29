@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="formulaire-inscription.css">
+    <title>GAMESOFT Formulaire d'inscription</title>
+</head>
+<body>
+    <header>
+        <nav class="menu">
+            <ul>
+            <li class="logo"><img src="IMAGES/LOGO.png" alt=""></li>
+            <li><a href="gamesoft-page-accueil.html">Accueil</a></li>
+            <li><a href="tous-les-jeux.html">JEUX</a></li>
+            </ul>
+            <div class="connect"><a href=""><img src="IMAGES/LOGO SE CONNECTER.png" alt=""></a></div>
+        </nav>
+    </header>
+    <div class="formulaire">
+      <form id="register-form">
+        <h1>INSCRIPTION</h1>
+        <div class="input-group">
+          <input type="radio" id="female" name="civility" value="female">
+          <label for="female">Madame</label>
+
+          <input type="radio" id="male" name="civility" value="male">
+          <label for="male">Monsieur</label>
+        </div>
+
+        <div class="input-group">
+            <label for="name">Votre nom de famille</label>
+            <input type="text" id="name" name="name">
+        </div>
+
+        <div class="input-group">
+            <label for="firstname">Votre Prénom</label>
+            <input type="text" id="firstname" name="firstname">
+        </div>
+
+        <div class="input-group">
+            <label for="identifiant">Votre Identifiant</label>
+            <input type="text" id="identifiant" name="identifiant">
+        </div>
+        <div id="errorIdentifiant" class="error-message"></div>
+
+        <div class="input-group">
+            <label for="password">Votre mot de passe</label>
+            <input type="text" id="password" name="password">
+        </div>
+        <div id="errorPassword" class="error-message"></div>
+
+        <div class="input-group">
+            <label for="email">Votre adresse E-mail</label>
+            <input type="text" id="email" name="email">
+        </div>
+        <div id="errorEmail" class="error-message"></div>
+
+        <div class="input-group">
+            <label for="confirmEmail">Veuillez confirmer votre adresse E-mail</label>
+            <input type="text" id="confirmEmail" name="confirmEmail">
+        </div>
+        <div id="errorConfirmEmail" class="error-message"></div>
+
+        <div class="input-group">
+            <label for="newsletter">J'accepte de recevoir la newsletter</label>
+            <input type="checkbox" id="newsletter" name="newsletter">
+        </div>
+
+        <div class="input-action">
+            <button type="submit">Je m'inscris</button>
+        </div>
+      </form>
+    </div>
+    <script src="formulaire-inscription.js"></script>
+</body>
+</html>
