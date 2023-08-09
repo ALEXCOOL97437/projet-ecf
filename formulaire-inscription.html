@@ -18,7 +18,7 @@
         </nav>
     </header>
     <div class="formulaire">
-      <form id="register-form">
+      <form id="register-form" onsubmit="return validateForm()">
         <h1>INSCRIPTION</h1>
         <div class="input-group">
           <input type="radio" id="female" name="civility" value="female">
@@ -30,35 +30,41 @@
 
         <div class="input-group">
             <label for="name">Votre nom de famille</label>
-            <input type="text" id="name" name="name">
+            <input type="text" id="name" name="name" required>
         </div>
 
         <div class="input-group">
             <label for="firstname">Votre Prénom</label>
-            <input type="text" id="firstname" name="firstname">
+            <input type="text" id="firstname" name="firstname" required>
         </div>
 
         <div class="input-group">
             <label for="identifiant">Votre Identifiant</label>
-            <input type="text" id="identifiant" name="identifiant">
+            <input type="text" id="identifiant" name="identifiant" required>
         </div>
         <div id="errorIdentifiant" class="error-message"></div>
 
         <div class="input-group">
             <label for="password">Votre mot de passe</label>
-            <input type="text" id="password" name="password">
+            <input type="password" id="password" name="password" required minlength="8">
         </div>
         <div id="errorPassword" class="error-message"></div>
 
         <div class="input-group">
+            <label for="password">Confirmation mot de passe</label>
+            <input type="password" id="confirmPassword" name="confirmPassword" required minlength="8">
+        </div>
+        <div id="errorConfirmPassword" class="error-message"></div>
+
+        <div class="input-group">
             <label for="email">Votre adresse E-mail</label>
-            <input type="text" id="email" name="email">
+            <input type="email" id="email" name="email" required placeholder="mail@domain.com">
         </div>
         <div id="errorEmail" class="error-message"></div>
 
         <div class="input-group">
-            <label for="confirmEmail">Veuillez confirmer votre adresse E-mail</label>
-            <input type="text" id="confirmEmail" name="confirmEmail">
+            <label for="confirmEmail">Confirmation adresse E-mail</label>
+            <input type="email" id="confirmEmail" name="confirmEmail" required>
         </div>
         <div id="errorConfirmEmail" class="error-message"></div>
 
@@ -68,10 +74,10 @@
         </div>
 
         <div class="input-action">
-            <button type="submit">Je m'inscris</button>
+            <button type="submit" id="buttonInscription">Je m'inscris</button>
         </div>
       </form>
     </div>
-    <script src="formulaire-inscription.js"></script>
+    <script src="formulaire-inscription.js"></script>    
 </body>
 </html>
