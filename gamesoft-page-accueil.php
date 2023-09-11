@@ -14,9 +14,6 @@
             <li class="logo"><img src="IMAGES/LOGO.png" alt=""></li>
             <li><a href="gamesoft-page-accueil.php">Accueil</a></li>
             <li><a href="tous-les-jeux.html">JEUX</a></li>
-<<<<<<< HEAD:gamesoft-page-accueil.html
-            <li><button id="subscribe" type="button"><a href="formulaire-inscription.html">S'INSCRIRE</a></button></li>
-=======
             <?php
             session_start();
 
@@ -29,7 +26,6 @@
             }
             ?>
          
->>>>>>> accueil:gamesoft-page-accueil.php
             </ul>
             <div class="connect"><a href="connexion-gamesoft.php"><img src="IMAGES/LOGO SE CONNECTER.png" alt=""></a></div>
         </nav>
