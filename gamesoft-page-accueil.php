@@ -12,11 +12,26 @@
         <nav class="menu">
             <ul>
             <li class="logo"><img src="IMAGES/LOGO.png" alt=""></li>
-            <li><a href="gamesoft-page-accueil.html">Accueil</a></li>
+            <li><a href="gamesoft-page-accueil.php">Accueil</a></li>
             <li><a href="tous-les-jeux.html">JEUX</a></li>
+<<<<<<< HEAD:gamesoft-page-accueil.html
             <li><button id="subscribe" type="button"><a href="formulaire-inscription.html">S'INSCRIRE</a></button></li>
+=======
+            <?php
+            session_start();
+
+            if (isset($_SESSION['pseudo'])) {
+                // L'utilisateur est connecté, affichez le bouton "Se déconnecter"
+                echo '<li><button id="deconnect" type="button"><a href="deconnexion.php">Se déconnecter</a></button></li>';
+            } else {
+                // L'utilisateur n'est pas connecté, affichez le bouton "S'INSCRIRE"
+                echo '<li><button id="subscribe" type="button"><a href="http://localhost:8888/test/ECF/inscription-gamesoft.php">S\'INSCRIRE</a></button></li>';
+            }
+            ?>
+         
+>>>>>>> accueil:gamesoft-page-accueil.php
             </ul>
-            <div class="connect"><a href=""><img src="IMAGES/LOGO SE CONNECTER.png" alt=""></a></div>
+            <div class="connect"><a href="connexion-gamesoft.php"><img src="IMAGES/LOGO SE CONNECTER.png" alt=""></a></div>
         </nav>
     </header>
     <h1>GAMESOFT</h1>
