@@ -22,9 +22,12 @@ if(isset($_POST['registrer'])){
         $_SESSION['mdp'] = $mdp;
         $_SESSION['email'] = $email;
         $userInfos = $recupUser->fetch();
-       // $_SESSION['id'] = $userInfos['pseudo'];
+        //$_SESSION['id'] = $userInfos['pseudo'];
+        
+        }//echo '<script>alert("Bonjour, merci de vous êtes inscrit")</script>';
+        //header('Location: gamesoft-page-accueil.html');
+        echo '<script>alert("Bonjour, merci de vous être inscrit"); window.location.href = "gamesoft-page-accueil.php";</script>';
 
-        }
       
         //echo $_SESSION['id']; // Afficher la session id (a ne pas mettre si projet en ligne, mettre par ex : echo "Inscription réussie)
     }
@@ -43,7 +46,7 @@ if(isset($_POST['registrer'])){
         <nav class="menu">
             <ul>
             <li class="logo"><img src="IMAGES/LOGO.png" alt=""></li>
-            <li><a href="gamesoft-page-accueil.html">Accueil</a></li>
+            <li><a href="gamesoft-page-accueil.php">Accueil</a></li>
             <li><a href="tous-les-jeux.html">JEUX</a></li>
             </ul>
             <div class="connect"><a href=""><img src="IMAGES/LOGO SE CONNECTER.png" alt=""></a></div>
