@@ -28,9 +28,7 @@ if(isset($_POST['registrer'])){
       
         //echo $_SESSION['id']; // Afficher la session id (a ne pas mettre si projet en ligne, mettre par ex : echo "Inscription réussie)
     }
-    else{
-        echo "Veuillez compléter tous les champs..."; //Si les champs pseudo et mdp ne sont pas vides, exécuter le code
-    } 
+    
 }
 ?>
 <!DOCTYPE html>
