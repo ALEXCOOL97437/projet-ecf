@@ -91,6 +91,9 @@ if(isset($_POST['connexion'])){
         <br>
         <div class="input-action">
             <button type="submit" id="buttonConnexion" name="connexion">Se connecter</button>
+        <br><br>
+        <span class="forgot-password"><a href="forgot_password.php">Mot de passe oublié ?</a></span>
+      </div>
      </form>
 </div>
 

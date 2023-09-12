@@ -49,7 +49,7 @@ if(isset($_POST['registrer'])){
             <li><a href="gamesoft-page-accueil.php">Accueil</a></li>
             <li><a href="tous-les-jeux.html">JEUX</a></li>
             </ul>
-            <div class="connect"><a href=""><img src="IMAGES/LOGO SE CONNECTER.png" alt=""></a></div>
+            <div class="connect"><a href="connexion-gamesoft.php"><img src="IMAGES/LOGO SE CONNECTER.png" alt=""></a></div>
         </nav>
     </header>
 
