@@ -25,8 +25,8 @@ if(!$_SESSION['mdp']){
     <button>Afficher tous les membres</button>
 </a>
 <br>
-<a href="publier-article.php">
-    <button>Publier article</button>
+<a href="publier-membres.php">
+    <button>Publier membres</button>
 </a>
 <br>
 <a href="articles.php">
