@@ -12,10 +12,20 @@ $requete->execute(array($gameId));
 // Vérifiez si le jeu existe
 if ($requete->rowCount() > 0) {
     $games = $requete->fetch(); // Récupérez les données du jeu
+
+    // Réquête SQL pour compter le nombre de likes
+    $requeteLikes = $bdd->prepare('SELECT COUNT(*) AS total_likes FROM likes WHERE id_jeu = ?');
+    $requeteLikes->execute(array($gameId));
+    $likeData = $requeteLikes->fetch();
+
+    // Récupérer le nombre de likes
+    $likes = $likeData['total_likes'];
 } else {
     // Le jeu n'a pas été trouvé, vous pouvez afficher un message d'erreur ou rediriger l'utilisateur
     echo "Jeu non trouvé.";
 }
+
+
 ?>
 
 
@@ -67,7 +77,14 @@ if ($requete->rowCount() > 0) {
                 <br>
                 <li>NOMBRE DE JOUEUR : <?php echo $games['nombre_joueurs'];?></li>
                 <br>
-                <li>SCORE FAVORIS : <?php echo $games['score_favoris'];?></li>
+                <li>Score : <?php echo $likes; ?></li>
+                <br>
+                <li><a href="favoris.php?t=1&id=<?php echo $games['id']; ?>">
+                <button style="color:white; background-color: green; margin-bottom: 10px;">Mettre en favoris</button>
+                </a></li>
+                <li><a href="favoris.php?t=2&id=<?php echo $games['id']; ?>">
+                <button style="color:black; background-color: yellow; margin-bottom: 10px;">Supprimer favoris</button>
+                </a></li>
             </ul>
         </div>
         <br>

@@ -37,7 +37,6 @@ if(!$_SESSION['mdp']){
     <button>Afficher tous les jeux</button>
 </a>
 <br>
-
-<a href="articles2.php"><button>Afficher articles favoris</button></a>
+<a href="score-jeux.php"><button>Afficher score des jeux</button></a>
 </body>
 </html>
