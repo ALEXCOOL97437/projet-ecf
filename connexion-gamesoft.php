@@ -22,6 +22,28 @@ if(isset($_POST['connexion'])){
     }
 }
 
+// Pour producteurs
+if(isset($_POST['connexion'])){
+    if(!empty($_POST['pseudo']) AND !empty($_POST['mdp'])){
+        $pseudo_par_defaut = array("developer1", "developer2", "developer3");
+        $mdp_par_defaut = array("developer1", "developer2", "developer3");
+
+
+      $pseudo_saisi = htmlspecialchars($_POST['pseudo']);
+      $mdp_saisi = htmlspecialchars($_POST['mdp']);
+
+      if(in_array($pseudo_saisi, $pseudo_par_defaut) && in_array($mdp_saisi, $mdp_par_defaut)){
+          $_SESSION['mdp'] = $mdp_saisi;
+          header('Location: espace-producteur.php');
+      }else{
+        echo '<script>alert("Mot de passe incorrect")</script>';
+      }
+    }else{
+        echo '<script>alert("Identifiant incorrect")</script>'; 
+    }
+}
+
+
 //Pour utilisateur
 if(isset($_POST['connexion'])){
     if(!empty($_POST['pseudo']) AND !empty($_POST['mdp'])){
