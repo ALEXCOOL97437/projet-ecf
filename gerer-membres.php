@@ -7,7 +7,7 @@ if (isset($_GET['id']) && !empty($_GET['id'])) {
     $getid = $_GET['id'];
 
     // Préparer une requête SQL pour récupérer les informations du membre correspondant à l'identifiant
-    $recupMembre = $bdd->prepare('SELECT * FROM users WHERE id = ?');
+    $recupMembre = $bdd->prepare('SELECT * FROM producteurs WHERE id = ?');
     $recupMembre->execute(array($getid));
 
     // Vérifier si le membre existe dans la base de données
@@ -28,13 +28,13 @@ if (isset($_GET['id']) && !empty($_GET['id'])) {
 
 
             // Préparer une requête SQL pour mettre à jour le membre dans la base de données
-            $updateMembre = $bdd->prepare('UPDATE users SET pseudo = ?, mdp = ? WHERE id = ?');
+            $updateMembre = $bdd->prepare('UPDATE producteurs SET pseudo = ?, mdp = ? WHERE id = ?');
             $updateMembre->execute(array($pseudo_saisi, $mdp_saisie, $getid));
 
             header('Location: membres.php');
         }
     } else {
-        echo "Aucun article trouvé";
+        echo "Aucun membre trouvé";
     }
 } else {
     echo "Aucun identifiant trouvé";
@@ -44,7 +44,7 @@ if (isset($_GET['id']) && !empty($_GET['id'])) {
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Modifier l'article</title>
+    <title>Modifier les membres</title>
     <meta charset="utf-8">
 </head>
 <body>

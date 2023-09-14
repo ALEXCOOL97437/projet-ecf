@@ -20,7 +20,7 @@ if(!$_SESSION['mdp']){
 
 <!-- Afficher tous les membres -->
 <?php
-   $recupUsers = $bdd->query('SELECT * FROM users');
+   $recupUsers = $bdd->query('SELECT * FROM producteurs');
    while($user = $recupUsers->fetch()){ // Boucle pour récupérer les membres de la table
     ?>
  <div class="membres" style="border: 1px solid black;">

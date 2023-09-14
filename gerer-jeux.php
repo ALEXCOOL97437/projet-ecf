@@ -27,6 +27,7 @@ if (isset($_GET['id']) && !empty($_GET['id'])) {
         $status = $gamesInfos['statut'];
         $genre = $gamesInfos['genre'];
         $players = $gamesInfos['nombre_joueurs'];
+        $creaters = $gamesInfos['créateur_du_jeu'];
         
         
 
@@ -46,19 +47,16 @@ if (isset($_GET['id']) && !empty($_GET['id'])) {
             $status_saisie = $_POST['statut'];
             $genre_saisie = $_POST['genre'];
             $players_saisie = $_POST['nombre_joueurs'];
-            
-
-            //Si l'admin saisie un nouveau mdp alors encodage du mdp sinon reprend la valeur du mdp d'origine
-            //$mdp_final = !empty($mdp_saisie) ? ($mdp_saisie) : $mdp_exist;
+            $creaters_saisie = $_POST['créateur_du_jeu'];
 
 
             // Préparer une requête SQL pour mettre à jour le membre dans la base de données
             $updateGames = $bdd->prepare('UPDATE games SET titre = ?, descriptif = ?, studio = ?,
             support = ?, priorite_developpement = ?, moteur = ?, date_creation = ?, date_maj = ?, date_sortie = ?,
-            budget = ?, statut = ?, genre = ?, nombre_joueurs = ? WHERE id = ?');
+            budget = ?, statut = ?, genre = ?, nombre_joueurs = ?, créateur_du_jeu = ? WHERE id = ?');
             $updateGames->execute(array($title_saisie, $description_saisie, $studio_saisie, $support_saisie,
             $priority_saisie, $motor_saisie, $creation_saisie, $update_saisie, $release_saisie,
-            $budget_saisie, $status_saisie, $genre_saisie, $players_saisie, $getid));
+            $budget_saisie, $status_saisie, $genre_saisie, $players_saisie, $creaters_saisie, $getid));
 
             header('Location: espace-administrateur.php');
         }
@@ -129,6 +127,10 @@ if (isset($_GET['id']) && !empty($_GET['id'])) {
         <div class="input-group">
             <label for="players">Nombre de joueurs</label>
             <input type="number" id="players" name="nombre_joueurs" value="<?php echo $players; ?>">     
+        </div>
+        <div class="input-group">
+            <label for="creaters">Créateurs du jeu</label>
+            <input type="text" id="creaters" name="créateur_du_jeu" value="<?php echo $creaters; ?>">     
         </div>
         <input type="submit" name="valider">
     </form>
