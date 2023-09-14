@@ -5,7 +5,7 @@ $bdd = new PDO('mysql:host=localhost:8889;dbname=gamesoft;charset=utf8;', 'root'
 // Verification si la session contient une valeur pour "mdp"
 if(!$_SESSION['mdp']){
     // Si pas de "mdp", rediriger vers la page connexion
-    header('Location: connexion-gamesoft.php');
+   header('Location: connexion-gamesoft.php');
 }
 ?>
 
