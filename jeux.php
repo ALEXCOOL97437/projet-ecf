@@ -29,6 +29,8 @@ if(!$_SESSION['mdp']){
      <button style="color:white; background-color: red; margin-bottom: 10px;">Supprimer le jeu</button></a> <!-- ce code affiche le pseudo de l'utilisateur dans un paragraphe HTML et fournit également un lien hypertexte vers un script de bannissement en utilisant l'ID de l'utilisateur comme paramètre dans l'URL. -->
     <a href="gerer-jeux.php?id=<?= $games['id']; ?>">
     <button style="color:white; background-color: blue; margin-bottom: 10px;">Modifier le jeu</button></a></p>
+    <a href="infos-jeux.php?id=<?= $games['id']; ?>">
+    <button style="color:white; background-color: orange; margin-bottom: 10px;">Infos du jeu</button></a></p>
  </div>
     <?php
    }

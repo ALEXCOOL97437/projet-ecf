@@ -22,29 +22,7 @@ if(isset($_POST['connexion'])){
     }
 }
 
-// Pour producteurs
-if(isset($_POST['connexion'])){
-    if(!empty($_POST['pseudo']) AND !empty($_POST['mdp'])){
-        $pseudo_par_defaut = array("developer1", "developer2", "developer3");
-        $mdp_par_defaut = array("developer1", "developer2", "developer3");
-
-
-      $pseudo_saisi = htmlspecialchars($_POST['pseudo']);
-      $mdp_saisi = htmlspecialchars($_POST['mdp']);
-
-      if(in_array($pseudo_saisi, $pseudo_par_defaut) && in_array($mdp_saisi, $mdp_par_defaut)){
-          $_SESSION['mdp'] = $mdp_saisi;
-          header('Location: espace-producteur.php');
-      }else{
-        echo '<script>alert("Mot de passe incorrect")</script>';
-      }
-    }else{
-        echo '<script>alert("Identifiant incorrect")</script>'; 
-    }
-}
-
-
-//Pour utilisateur
+//Pour producteurs et utilisateurs
 if(isset($_POST['connexion'])){
     if(!empty($_POST['pseudo']) AND !empty($_POST['mdp'])){
         $pseudo = htmlspecialchars($_POST['pseudo']);
@@ -53,31 +31,85 @@ if(isset($_POST['connexion'])){
         //$mdp = sha1($_POST['mdp']);
 
     
+        //Recherche du producteur dans la base de données
+        $recupUserProducteur = $bdd->prepare('SELECT * FROM producteurs WHERE pseudo = ?');
+        $recupUserProducteur->execute(array($pseudo));
+
         //Recherche de l'utilisateur dans la base de données
         $recupUser = $bdd->prepare('SELECT * FROM users WHERE pseudo = ?');//('SELECT * FROM users WHERE pseudo = ? AND mdp = ?');
         $recupUser->execute(array($pseudo));//, $mdp));
         
-        if($recupUser->rowCount() > 0){
+        
+        if($recupUserProducteur->rowCount() > 0){
+            $userInfos = $recupUserProducteur->fetch();
+            $mdp_stocke = $userInfos['mdp']; //Récupérez le hachage stocké
+
+                if(password_verify($mdp_saisi, $mdp_stocke)){
+                $_SESSION['pseudo'] = $pseudo;
+                $_SESSION['mdp'] = $mdp_saisi;
+                $_SESSION['id'] = $userInfos['id'];
+                header('Location: espace-producteur.php');
+
+            }else { 
+                echo '<script>alert("Mot de passe incorrect")</script>'; // Pour le producteur
+            }
+        }elseif ($recupUser->rowCount() > 0) {
             $userInfos = $recupUser->fetch();
             $mdp_stocke = $userInfos['mdp']; //Récupérez le hachage stocké
 
                 if(password_verify($mdp_saisi, $mdp_stocke)){
-            $_SESSION['pseudo'] = $pseudo;
-            //$_SESSION['mdp'] = $mdp;
-            //$_SESSION['id'] = $recupUser->fetch() ['id'];
-            $_SESSION['id'] = $userInfos['id'];
-            header('Location: gamesoft-page-accueil.php');
+                 $_SESSION['pseudo'] = $pseudo;
+                //$_SESSION['mdp'] = $mdp;
+                //$_SESSION['id'] = $recupUser->fetch() ['id'];
+                $_SESSION['id'] = $userInfos['id'];
+                header('Location: gamesoft-page-accueil.php');
 
-        }else { 
-            echo '<script>alert("Mot de passe incorrect")</script>';
+            }else { 
+                echo '<script>alert("Mot de passe incorrect")</script>'; // Pour l'utilisateur
         }
     }else{
         echo '<script>alert("Identifiant incorrect")</script>';
     }
-    
-    }
-          
+
 }
+    
+}
+
+
+//Pour utilisateur
+//if(isset($_POST['connexion'])){
+  //  if(!empty($_POST['pseudo']) AND !empty($_POST['mdp'])){
+    //    $pseudo = htmlspecialchars($_POST['pseudo']);
+        //$mdp = password_hash($_POST['mdp'], PASSWORD_DEFAULT);
+      //  $mdp_saisi = $_POST['mdp'];
+        //$mdp = sha1($_POST['mdp']);
+
+    
+        //Recherche de l'utilisateur dans la base de données
+        //$recupUser = $bdd->prepare('SELECT * FROM users WHERE pseudo = ?');//('SELECT * FROM users WHERE pseudo = ? AND mdp = ?');
+        //$recupUser->execute(array($pseudo));//, $mdp));
+        
+        //if($recupUser->rowCount() > 0){
+          //  $userInfos = $recupUser->fetch();
+            //$mdp_stocke = $userInfos['mdp']; //Récupérez le hachage stocké
+
+              //  if(password_verify($mdp_saisi, $mdp_stocke)){
+            //$_SESSION['pseudo'] = $pseudo;
+            //$_SESSION['mdp'] = $mdp;
+            //$_SESSION['id'] = $recupUser->fetch() ['id'];
+            //$_SESSION['id'] = $userInfos['id'];
+            //header('Location: gamesoft-page-accueil.php');
+
+        //}else { 
+          //  echo '<script>alert("Mot de passe incorrect")</script>';
+        //}
+    //}else{
+      //  echo '<script>alert("Identifiant incorrect")</script>';
+    //}
+    
+    //}
+          
+//}
 ?>
 <!DOCTYPE html>
 <html>
