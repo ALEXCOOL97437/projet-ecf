@@ -51,7 +51,7 @@ if ($requete->rowCount() > 0) {
         </nav>
     </header>
     <div class="bloc-container">
-            <div class="bloc1"><img src="IMAGES/President devil main.png" alt=""></div>
+            <div class="bloc1"><video width="500" height="400" controls><source src="IMAGES/Wo Long  Fallen Dynasty 2023.07.31 - 22.24.09.02.mp4"></video></div>
             <div class="bloc2">
                 <ul class="description" style="color:ghostwhite">
                     <li>TITRE : <?php echo $games['titre'];?></li>
@@ -90,9 +90,9 @@ if ($requete->rowCount() > 0) {
         <h2>A propos du jeu</h2>
             <p class="descriptif" style="color: ghostwhite;"><?php echo $games['descriptif']; ?> </p>
             <div class="blocs">
-                <div class="image1"><a href="IMAGES/President devil1.png"><img src="IMAGES/President devil1.png" alt=""></a></div>
-                <div class="image2"><a href="IMAGES/President devil2.png"><img src="IMAGES/President devil2.png" alt=""></a></div>
-                <div class="image3"><a href="IMAGES/President devil3.png"><img src="IMAGES/President devil3.png" alt=""></a></div>
+                <div class="image1"><a href="IMAGES/Wo Long  Fallen Dynasty Screenshot 001.png"><img src="IMAGES/Wo Long  Fallen Dynasty Screenshot 001.png" alt=""></a></div>
+                <div class="image2"><a href="IMAGES/Wo Long  Fallen Dynasty Screenshot 002.png"><img src="IMAGES/Wo Long  Fallen Dynasty Screenshot 002.png" alt=""></a></div>
+                <div class="image3"><a href="IMAGES/Wo Long  Fallen Dynasty Screenshot 003.png"><img src="IMAGES/Wo Long  Fallen Dynasty Screenshot 003.png" alt=""></a></div>
             </div>
     <script src="fiche-jeu1.js"></script>
 </body>
