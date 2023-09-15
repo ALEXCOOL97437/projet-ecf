@@ -84,6 +84,12 @@ if ($requete->rowCount() > 0) {
                     <li><a href="favoris.php?t=2&id=<?php echo $games['id']; ?>">
                     <button style="color:black; background-color: yellow; margin-bottom: 10px;">Supprimer favoris</button>
                     </a></li>
+                    <li><a href="publier-avis.php?t=2&id=<?php echo $games['id']; ?>">
+                    <button style="color:white; background-color: orange; margin-bottom: 10px;">Publier un avis</button>
+                    </a></li>
+                    <li><a href="avis.php?t=2&id=<?php echo $games['id']; ?>">
+                    <button style="color:black; background-color: orange; margin-bottom: 10px;">Voir les avis du jeu</button>
+                    </a></li>
                 </ul>
             </div>
     </div>

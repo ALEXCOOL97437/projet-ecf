@@ -32,7 +32,7 @@ if (isset($_POST['envoi'])) {
         $release, $budget, $status, $type, $players, $description, $creaters));
 
         // Afficher un message de succès si l'insertion a réussi
-        echo '<script>alert("Bonjour, nouveau jeu ajouter"); window.location.href = "publier-jeux.php";</script>';
+        echo '<script>alert("Bonjour, nouveau jeu ajouter"); window.location.href = "fiche-jeu1.php";</script>';
     }
 
 ?>
