@@ -1,0 +1,140 @@
+body{
+    width: 100%;
+}
+
+header {
+    background-color: rgb(233, 243, 238);
+    padding: 30px 0;
+    
+}
+
+.logo img {
+    width: 100px;
+    height: 100PX;
+    top: 13px;
+    left: 15px;
+    position: absolute;
+}
+
+.connect img{
+    width: 110px;
+    position: absolute;
+    top: 10px;
+    right: 40px;
+}
+.menu{display: flex;
+justify-content: center;
+align-items: center;
+}
+
+ul li{
+    display: inline-block;
+    margin-right: 30px;   
+}
+
+.bloc-container {
+    display: flex;
+    justify-content: space-between; /* Pour aligner les blocs à l'extrémité gauche et droite */
+    align-items: center; /* Pour aligner les blocs verticalement au centre */
+}
+
+/*.bloc1 img{
+   position: relative; left: 100px; top: 45px; width: 500px;height: 320px;
+}
+
+.bloc2{
+   position: relative; background-color:rgb(76, 204, 204);float: right;width: 550px; height: 320px;
+   bottom: 280px; right: 120px; 
+}*/
+
+.bloc1, .bloc2 {
+    flex: 1; /* Pour que les blocs occupent un espace égal */
+    max-width: 50%; /* Pour que chaque bloc occupe au maximum 50% de la largeur */
+    padding: 20px; /* Ajoutez de la marge intérieure au besoin */
+}
+
+
+
+.description{
+   line-height: 1.4em;
+}
+
+h2{
+   position: relative; left: 100px;
+}
+
+p{
+    position: relative; left: 100px; top: 12px; width: 500px;height: 320px; font-size: 20px;
+}
+
+.blocs {
+    padding: 20%;display: flex;justify-content: flex-start;
+    flex-wrap: wrap; position: absolute;
+}
+
+.image1 img, .image2 img, .image3 img{width: 230px;height: 230px;display: inline-block;
+    margin-right: 30px;border-radius: 15px;
+}
+
+/* Styles pour les écrans de taille moyenne et grande */
+@media screen and (min-width: 768px) {
+    body {
+        width: 100%;
+    }
+
+    header {
+        padding: 20px 0;
+    }
+
+    .logo img {
+        width: 80px;
+        height: 80px;
+    }
+
+    .connect img {
+        width: 90px;
+    }
+
+    .bloc1 img {
+        left: 50px;
+        top: 30px;
+        width: 100%;
+        max-width: 40%;
+        height: auto;
+    }
+
+    .bloc2 ul {
+        bottom: 0;
+        right: 0;
+        max-width: 50%;
+        height: auto;
+    }
+
+    .description {
+        line-height: 1.3em;
+    }
+
+    h2 {
+        left: 50px;
+    }
+
+    p {
+        left: 50px;
+        top: 12px;
+        width: 100%;
+        max-width: 500px;
+    }
+
+    .blocs {
+        padding: 10%;
+    }
+
+    .image1 img,
+    .image2 img,
+    .image3 img {
+        width: 100%;
+        max-width: 230px;
+        height: auto;
+        margin-bottom: 20px;
+    }
+}
