@@ -1,4 +1,4 @@
-// add button subscribe to red and green
+// button inscription en rouge et vert
 const subscribe = document.getElementById('subscribe');
 
 const setColorGreen = () => {
@@ -11,3 +11,4 @@ const setColorRed = () => {
 
 subscribe.addEventListener('mouseenter', setColorGreen);
 subscribe.addEventListener('mouseleave', setColorRed);
+
