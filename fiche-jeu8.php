@@ -4,7 +4,7 @@ $bdd = new PDO('mysql:host=localhost:8889;dbname=gamesoft;charset=utf8;', 'root'
 //$bdd = new PDO('mysql:host=sql113.infinityfree.com;dbname=if0_34998643_basetest;charset=utf8', 'if0_34998643', 'tImeLqNFXR');
 
 // ID du jeu qui sera afficher
-$gameId = 1; // Changer l'ID en fonction du jeu souhaité
+$gameId = 8; // Changer l'ID en fonction du jeu souhaité
 
 // Requête SQL pour récupérer les informations du jeu avec l'ID spécifié
 $requete = $bdd->prepare('SELECT * FROM games WHERE id = ?');
@@ -62,7 +62,7 @@ if ($requete->rowCount() > 0) {
         </nav>
     </header>
     <div class="bloc-container">
-            <div class="bloc1"><video width="500" height="400" controls><source src="IMAGES/Wo Long  Fallen Dynasty 2023.07.31 - 22.24.09.02.mp4"></video></div>
+            <div class="bloc1"><video width="500" height="400" controls><source src="IMAGES/Wo Long  Fallen Dynasty 2023.09.15 - 22.17.39.04.mp4"></video></div>
             <div class="bloc2">
                 <ul class="description" style="color:ghostwhite">
                     <li>TITRE : <?php echo $games['titre'];?></li>
@@ -107,9 +107,9 @@ if ($requete->rowCount() > 0) {
         <h2>A propos du jeu</h2>
             <p class="descriptif" style="color: ghostwhite;"><?php echo $games['descriptif']; ?> </p>
             <div class="blocs">
-                <div class="image1"><a href="IMAGES/Wo Long  Fallen Dynasty Screenshot 001.png"><img src="IMAGES/Wo Long  Fallen Dynasty Screenshot 001.png" alt=""></a></div>
-                <div class="image2"><a href="IMAGES/Wo Long  Fallen Dynasty Screenshot 002.png"><img src="IMAGES/Wo Long  Fallen Dynasty Screenshot 002.png" alt=""></a></div>
-                <div class="image3"><a href="IMAGES/Wo Long  Fallen Dynasty Screenshot 003.png"><img src="IMAGES/Wo Long  Fallen Dynasty Screenshot 003.png" alt=""></a></div>
+                <div class="image1"><a href="IMAGES/Wo Long  Fallen Dynasty Screenshot 011.png"><img src="IMAGES/Wo Long  Fallen Dynasty Screenshot 011.png" alt=""></a></div>
+                <div class="image2"><a href="IMAGES/Wo Long  Fallen Dynasty Screenshot 012.png"><img src="IMAGES/Wo Long  Fallen Dynasty Screenshot 012.png" alt=""></a></div>
+                <div class="image3"><a href="IMAGES/Wo Long  Fallen Dynasty Screenshot 013.png"><img src="IMAGES/Wo Long  Fallen Dynasty Screenshot 013.png" alt=""></a></div>
             </div>
     <script src="fiche-jeu1.js"></script>
 </body>

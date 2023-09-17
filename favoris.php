@@ -1,6 +1,7 @@
 <?php
 session_start();
 $bdd = new PDO('mysql:host=localhost:8889;dbname=gamesoft;charset=utf8;', 'root', 'root');
+//$bdd = new PDO('mysql:host=sql113.infinityfree.com;dbname=if0_34998643_basetest;charset=utf8', 'if0_34998643', 'tImeLqNFXR');
 
 // Pour reporter les erreurs rencontrer
 error_reporting(E_ALL);
@@ -73,7 +74,7 @@ if(isset($_GET['t'],$_GET['id']) && !empty($_GET['t']) && !empty($_GET['id'])){
             }
 
         }//Redirige l'utilisateur sur l'article liké ou dislké
-        // header("Location: fiche-jeu1.php?id=$getid");
+         header("Location: tous-les-jeux.php?id=$getid");
     } else {
         //Affiche un message d"erreur si l'article n'existe pas
         echo('Erreur fatale. <a href="http://localhost:8888/test/ECF/tous-les-jeux.php">Revenir à l\'accueil</a>');
@@ -88,7 +89,7 @@ if (isset($_POST['envoi'])) {
         // Préparer une requête SQL pour insérer un nouveau jeu dans la base de données
         $inserAvis = $bdd->prepare('INSERT INTO avis(id_jeu, pseudo, games_avis) VALUES (?, ?, ?)');
         
-        // Exécuter la requête SQL en passant les valeurs des champs
+       // Exécuter la requête SQL en passant les valeurs des champs
         $inserAvis->execute(array($getid, $sessionPseudo, $avis));
 
         // Afficher un message de succès si l'insertion a réussi
@@ -98,7 +99,7 @@ if (isset($_POST['envoi'])) {
 ?>
 
 
-<!DOCTYPE html>
+<!--<!DOCTYPE html>
 <html>
 <head>
     <title>Publier un Avis</title>
@@ -116,4 +117,4 @@ if (isset($_POST['envoi'])) {
     </form>
 
 </body>
-</html>
+</html> -->

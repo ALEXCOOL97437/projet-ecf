@@ -4,7 +4,7 @@ $bdd = new PDO('mysql:host=localhost:8889;dbname=gamesoft;charset=utf8;', 'root'
 //$bdd = new PDO('mysql:host=sql113.infinityfree.com;dbname=if0_34998643_basetest;charset=utf8', 'if0_34998643', 'tImeLqNFXR');
 
 // ID du jeu qui sera afficher
-$gameId = 1; // Changer l'ID en fonction du jeu souhaité
+$gameId = 2; // Changer l'ID en fonction du jeu souhaité
 
 // Requête SQL pour récupérer les informations du jeu avec l'ID spécifié
 $requete = $bdd->prepare('SELECT * FROM games WHERE id = ?');
@@ -31,6 +31,7 @@ if ($requete->rowCount() > 0) {
 
 
 
+
 <!DOCTYPE html>
 <html lang="fr">
 <head>
@@ -49,20 +50,20 @@ if ($requete->rowCount() > 0) {
             <?php
             session_start();
 
-            if (isset($_SESSION['pseudo'])) {
-                // L'utilisateur est connecté, affichez le bouton "Se déconnecter"
-                echo '<li><button id="deconnect" type="button"><a href="deconnexion.php">Se déconnecter</a></button></li>';
-            } else {
-                // L'utilisateur n'est pas connecté, affichez le bouton "S'INSCRIRE"
-                echo '<li><button id="subscribe" type="button"><a href="http://localhost:8888/test/ECF/inscription-gamesoft.php">S\'INSCRIRE</a></button></li>';
-            }
-            ?>
+if (isset($_SESSION['pseudo'])) {
+    // L'utilisateur est connecté, affichez le bouton "Se déconnecter"
+    echo '<li><button id="deconnect" type="button"><a href="deconnexion.php">Se déconnecter</a></button></li>';
+} else {
+    // L'utilisateur n'est pas connecté, affichez le bouton "S'INSCRIRE"
+    echo '<li><button id="subscribe" type="button"><a href="http://localhost:8888/test/ECF/inscription-gamesoft.php">S\'INSCRIRE</a></button></li>';
+}
+?>
             </ul>
             <div class="connect"><a href="connexion-gamesoft.php"><img src="IMAGES/LOGO SE CONNECTER.png" alt=""></a></div>
         </nav>
     </header>
     <div class="bloc-container">
-            <div class="bloc1"><video width="500" height="400" controls><source src="IMAGES/Wo Long  Fallen Dynasty 2023.07.31 - 22.24.09.02.mp4"></video></div>
+            <div class="bloc1"><video width="500" height="400" controls><source src="IMAGES/Morceau salami.mp4"></video></div>
             <div class="bloc2">
                 <ul class="description" style="color:ghostwhite">
                     <li>TITRE : <?php echo $games['titre'];?></li>
@@ -107,9 +108,9 @@ if ($requete->rowCount() > 0) {
         <h2>A propos du jeu</h2>
             <p class="descriptif" style="color: ghostwhite;"><?php echo $games['descriptif']; ?> </p>
             <div class="blocs">
-                <div class="image1"><a href="IMAGES/Wo Long  Fallen Dynasty Screenshot 001.png"><img src="IMAGES/Wo Long  Fallen Dynasty Screenshot 001.png" alt=""></a></div>
-                <div class="image2"><a href="IMAGES/Wo Long  Fallen Dynasty Screenshot 002.png"><img src="IMAGES/Wo Long  Fallen Dynasty Screenshot 002.png" alt=""></a></div>
-                <div class="image3"><a href="IMAGES/Wo Long  Fallen Dynasty Screenshot 003.png"><img src="IMAGES/Wo Long  Fallen Dynasty Screenshot 003.png" alt=""></a></div>
+                <div class="image1"><a href="IMAGES/Marsupilami Img 01_1.png"><img src="IMAGES/Marsupilami Img 01_1.png" alt=""></a></div>
+                <div class="image2"><a href="IMAGES/marsupilami-07.png"><img src="IMAGES/marsupilami-07.png" alt=""></a></div>
+                <div class="image3"><a href="IMAGES/marsupilami-12.png"><img src="IMAGES/marsupilami-12.png" alt=""></a></div>
             </div>
     <script src="fiche-jeu1.js"></script>
 </body>

@@ -1,3 +1,11 @@
+<?php 
+session_start(); // Pour rester connecter sur toutes les pages
+$bdd = new PDO('mysql:host=localhost:8889;dbname=gamesoft;charset=utf8;', 'root', 'root');
+//$bdd = new PDO('mysql:host=sql113.infinityfree.com;dbname=if0_34998643_basetest;charset=utf8', 'if0_34998643', 'tImeLqNFXR');
+
+?>
+
+
 <!DOCTYPE html>
 <html lang="fr">
 <head>
@@ -13,7 +21,7 @@
             <ul>
             <li class="logo"><img src="IMAGES/LOGO.png" alt=""></li>
             <li><a href="gamesoft-page-accueil.php">Accueil</a></li>
-            <li><a href="tous-les-jeux.html">JEUX</a></li>
+            <li><a href="tous-les-jeux.php">JEUX</a></li>
             <?php
             session_start();
 

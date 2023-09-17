@@ -1,6 +1,7 @@
 <?php
 session_start();
 $bdd = new PDO('mysql:host=localhost:8889;dbname=gamesoft;charset=utf8;', 'root', 'root');
+//$bdd = new PDO('mysql:host=sql113.infinityfree.com;dbname=if0_34998643_basetest;charset=utf8', 'if0_34998643', 'tImeLqNFXR');
 
 // Pour administrateur
 if(isset($_POST['connexion'])){
