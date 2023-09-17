@@ -1,6 +1,8 @@
 <?php
 session_start();
 $bdd = new PDO('mysql:host=localhost:8889;dbname=gamesoft;charset=utf8;', 'root', 'root');
+//$bdd = new PDO('mysql:host=sql113.infinityfree.com;dbname=if0_34998643_basetest;charset=utf8', 'if0_34998643', 'tImeLqNFXR');
+
 if (!$_SESSION['mdp']) {
     header('Location: connexion-gamesoft.php');
 }
@@ -32,10 +34,19 @@ if (isset($_POST['envoi'])) {
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Publier un producteur</title>
     <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Publier un producteur</title>
+    <link rel="stylesheet" href="connexion-gamesoft.css">
 </head>
 <body>
+<header>
+        <nav class="menu">
+        <ul>
+            <li class="logo"><img src="IMAGES/LOGO.png" alt=""></li>
+            </ul>
+        </nav>
+    </header>
     <form method="POST" action="">
     <div class="input-group">
             <label for="identifiant">Ajouter un identifiant ou PSEUDO</label>

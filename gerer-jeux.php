@@ -1,5 +1,11 @@
 <?php
+session_start();
 $bdd = new PDO('mysql:host=localhost:8889;dbname=gamesoft;', 'root', 'root');
+//$bdd = new PDO('mysql:host=sql113.infinityfree.com;dbname=if0_34998643_basetest;charset=utf8', 'if0_34998643', 'tImeLqNFXR');
+
+if (!$_SESSION['mdp']) {
+    header('Location: connexion-gamesoft.php');
+}
 
 // Vérifier si un identifiant (id) est présent dans l'URL et s'il n'est pas vide
 if (isset($_GET['id']) && !empty($_GET['id'])) {
@@ -58,7 +64,7 @@ if (isset($_GET['id']) && !empty($_GET['id'])) {
             $priority_saisie, $motor_saisie, $creation_saisie, $update_saisie, $release_saisie,
             $budget_saisie, $status_saisie, $genre_saisie, $players_saisie, $creaters_saisie, $getid));
 
-            header('Location: espace-administrateur.php');
+            header('Location: jeux.php');
         }
     } else {
         echo "Aucun jeu trouvé";
@@ -71,11 +77,20 @@ if (isset($_GET['id']) && !empty($_GET['id'])) {
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Modifier l'article</title>
     <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Modifier le jeu</title>
+    <link rel="stylesheet" href="publier.css">
 </head>
 <body>
-    <form method="POST" action="">
+    <header>
+        <nav class="menu">
+            <ul>
+            <li class="logo"><img src="IMAGES/LOGO.png" alt=""></li>
+            <li><a href="deconnexion.php">Déconnexion</a></li>
+        </nav>
+    </header>
+    <form method="POST" action="" class="form-container">
          <div class="input-group">
             <label for="title">Ajouter un Titre</label>
             <input type="text" id="title" name="titre" value="<?php echo $title; ?>">
@@ -132,7 +147,7 @@ if (isset($_GET['id']) && !empty($_GET['id'])) {
             <label for="creaters">Créateurs du jeu</label>
             <input type="text" id="creaters" name="créateur_du_jeu" value="<?php echo $creaters; ?>">     
         </div>
-        <input type="submit" name="valider">
+        <input type="submit" id="buttonAddGames" name="valider">
     </form>
 </body>
 </html>

@@ -115,9 +115,10 @@ if(isset($_POST['connexion'])){
 <!DOCTYPE html>
 <html>
 <head>
-    <link rel="stylesheet" href="connexion-gamesoft.css">
-    <title>Connexion</title>
     <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Connexion</title>
+    <link rel="stylesheet" href="connexion-gamesoft.css">
 <head>
 <body>
 <header>
@@ -125,7 +126,7 @@ if(isset($_POST['connexion'])){
             <ul>
             <li class="logo"><img src="IMAGES/LOGO.png" alt=""></li>
             <li><a href="gamesoft-page-accueil.php">Accueil</a></li>
-            <li><a href="tous-les-jeux.html">JEUX</a></li>
+            <li><a href="tous-les-jeux.php">JEUX</a></li>
             </ul>
             <div class="connect"><a href=""><img src="IMAGES/LOGO SE CONNECTER.png" alt=""></a></div>
         </nav>

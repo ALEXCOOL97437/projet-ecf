@@ -1,5 +1,11 @@
 <?php
+session_start();
 $bdd = new PDO('mysql:host=localhost:8889;dbname=gamesoft;charset=utf8;', 'root', 'root');
+//$bdd = new PDO('mysql:host=sql113.infinityfree.com;dbname=if0_34998643_basetest;charset=utf8', 'if0_34998643', 'tImeLqNFXR');
+
+if (!$_SESSION['mdp']) {
+    header('Location: connexion-gamesoft.php');
+}
 
 // Vérifier si un identifiant (id) est présent dans l'URL et s'il n'est pas vide
 if (isset($_GET['id']) && !empty($_GET['id'])) {
@@ -37,12 +43,20 @@ if (isset($_GET['id']) && !empty($_GET['id'])) {
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Informations du jeu</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Informations du jeu</title>
+    <link rel="stylesheet" href="infos-jeux.css">
 </head>
 <body>
-    <div class="game-info">
+<header>
+        <nav class="menu">
+            <ul>
+            <li class="logo"><img src="IMAGES/LOGO.png" alt=""></li>
+            <li><a href="deconnexion.php">Déconnexion</a></li>
+        </nav>
+    </header>
+    <div class="game-infos">
         <h1><?php echo $title; ?></h1>
         <p>Studio de développement : <?php echo $studio; ?></p>
         <p>Console de jeu : <?php echo $support; ?></p>

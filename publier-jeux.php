@@ -1,6 +1,8 @@
 <?php
 session_start();
 $bdd = new PDO('mysql:host=localhost:8889;dbname=gamesoft;charset=utf8;', 'root', 'root');
+//$bdd = new PDO('mysql:host=sql113.infinityfree.com;dbname=if0_34998643_basetest;charset=utf8', 'if0_34998643', 'tImeLqNFXR');
+
 if (!$_SESSION['mdp']) {
     header('Location: connexion-gamesoft.php');
 }
@@ -32,7 +34,7 @@ if (isset($_POST['envoi'])) {
         $release, $budget, $status, $type, $players, $description, $creaters));
 
         // Afficher un message de succès si l'insertion a réussi
-        echo '<script>alert("Bonjour, nouveau jeu ajouter"); window.location.href = "fiche-jeu1.php";</script>';
+        echo '<script>alert("Bonjour, nouveau jeu ajouter"); window.location.href = "jeux.php";</script>';
     }
 
 ?>
@@ -41,11 +43,20 @@ if (isset($_POST['envoi'])) {
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Publier un jeu</title>
     <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Publier un jeu</title>
+    <link rel="stylesheet" href="publier.css">
 </head>
 <body>
-    <form method="POST" action="">
+    <header>
+        <nav class="menu">
+            <ul>
+            <li class="logo"><img src="IMAGES/LOGO.png" alt=""></li>
+            <li><a href="deconnexion.php">Déconnexion</a></li>
+        </nav>
+    </header>
+    <form method="POST" action="" class="form-container">
     <div class="input-group">
             <label for="title">Ajouter un Titre</label>
             <input type="text" id="title" name="titre" required>

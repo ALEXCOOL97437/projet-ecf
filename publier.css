@@ -1,0 +1,63 @@
+header {
+    background-color: rgb(233, 243, 238);
+    padding: 30px 0;
+    
+}
+
+body {
+    background-image: url(IMAGES/IMAGE\ ARRIERE\ PLAN.png);
+    background-size: cover;
+}
+
+.logo img {
+    width: 100px;
+    height: 100PX;
+    top: 13px;
+    left: 15px;
+    position: absolute;
+}
+
+.menu{display: flex;
+    justify-content: center;
+    align-items: center;
+    }
+    
+    ul li{
+        display: inline-block;
+        margin-right: 30px;
+        
+    }
+
+    .form-container {
+        width: 50%;
+        margin: 0 auto;
+        padding: 20px;
+        background-color:aliceblue;
+        border-radius: 10px;
+        box-shadow: 0 0 15px #2f60a0;
+    }
+
+    .input-group {
+        margin-bottom: 15px;
+    }
+
+    .input-group label {
+        display: block;
+        margin-bottom: 5px;
+        font-weight: bold;
+    }
+
+    .input-group input {
+        width: 97%;
+        padding: 10px;
+        border-radius: 5px;
+        border: 1px solid #ccc;
+    }
+
+    #buttonAddGames {
+        padding: 10px 20px;
+        border: none;
+        border-radius: 7px;
+        background-color:#ccc;
+        color:black
+    }

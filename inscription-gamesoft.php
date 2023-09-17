@@ -37,9 +37,10 @@ if(isset($_POST['registrer'])){
 <!DOCTYPE html>
 <html>
     <head>
-        <link rel="stylesheet" href="inscription-gamesoft.css">
-        <title>Inscription</title>
         <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Inscription</title>
+        <link rel="stylesheet" href="inscription-gamesoft.css">
     </head>
 <body>
 <header>
@@ -47,7 +48,7 @@ if(isset($_POST['registrer'])){
             <ul>
             <li class="logo"><img src="IMAGES/LOGO.png" alt=""></li>
             <li><a href="gamesoft-page-accueil.php">Accueil</a></li>
-            <li><a href="tous-les-jeux.html">JEUX</a></li>
+            <li><a href="tous-les-jeux.php">JEUX</a></li>
             </ul>
             <div class="connect"><a href="connexion-gamesoft.php"><img src="IMAGES/LOGO SE CONNECTER.png" alt=""></a></div>
         </nav>

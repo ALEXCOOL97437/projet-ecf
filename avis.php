@@ -33,5 +33,3 @@ if (isset($_GET['id']) && !empty($_GET['id'])) {
     echo "Aucun jeu trouvé.";
 }
 ?>
-
-

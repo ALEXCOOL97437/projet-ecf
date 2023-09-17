@@ -1,5 +1,11 @@
 <?php
+session_start();
 $bdd = new PDO('mysql:host=localhost:8889;dbname=gamesoft;', 'root', 'root');
+//$bdd = new PDO('mysql:host=sql113.infinityfree.com;dbname=if0_34998643_basetest;charset=utf8', 'if0_34998643', 'tImeLqNFXR');
+
+if (!$_SESSION['mdp']) {
+    header('Location: connexion-gamesoft.php');
+}
 
 // Vérifier si un identifiant (id) est présent dans l'URL et s'il n'est pas vide
 if (isset($_GET['id']) && !empty($_GET['id'])) {
@@ -44,9 +50,18 @@ if (isset($_GET['id']) && !empty($_GET['id'])) {
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Modifier les membres</title>
     <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Modifier les membres</title>
+    <link rel="stylesheet" href="connexion-gamesoft.css">
 </head>
+<header>
+        <nav class="menu">
+            <ul>
+            <li class="logo"><img src="IMAGES/LOGO.png" alt=""></li>
+            <li><a href="deconnexion.php">Déconnexion</a></li>
+        </nav>
+    </header>
 <body>
     <form method="POST" action="">
         <input type="text" name="pseudo" value="<?php echo $pseudo; ?>">

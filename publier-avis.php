@@ -35,13 +35,24 @@ if (isset($_POST['envoi'])) {
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Publier un Avis</title>
     <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Publier un Avis</title>
+    <link rel="stylesheet" href="avis.css">
 </head>
 <body>
-    <form method="POST" action="">
+<header>
+        <nav class="menu">
+            <ul>
+            <li class="logo"><img src="IMAGES/LOGO.png" alt=""></li>
+            <li><a href="gamesoft-page-accueil.php">Accueil</a></li>
+            <li><a href="tous-les-jeux.php">JEUX</a></li>
+            </ul>
+        </nav>
+    </header>
+    <form method="POST" action="" class="forme-container">
     <div class="input-group">
-            <label for="avis">Ajouter un avis</label>
+            <label style="color: white;" for="avis">Ajouter un avis</label>
             <input type="text" id="games_avis" name="games_avis">
         </div>
     <div class="input-action">

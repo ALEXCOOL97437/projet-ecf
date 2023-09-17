@@ -1,0 +1,51 @@
+header {
+    background-color: rgb(233, 243, 238);
+    padding: 30px 0;
+    
+}
+
+body {
+    background-image: url(IMAGES/IMAGE\ ARRIERE\ PLAN.png);
+    background-size: cover;
+}
+
+.logo img {
+    width: 100px;
+    height: 100PX;
+    top: 13px;
+    left: 15px;
+    position: absolute;
+}
+
+.menu{display: flex;
+    justify-content: center;
+    align-items: center;
+    }
+    
+    ul li{
+        display: inline-block;
+        margin-right: 30px;
+        
+    }
+
+    .membres p {
+        margin: 0;
+    }
+
+    .membres button {
+        cursor: pointer;
+        border: none;
+        padding: 10px 20px;
+        border-radius: 5px;
+    }
+
+    .jeux p {
+        margin: 0;
+    }
+
+    .jeux button {
+        cursor: pointer;
+        border: none;
+        padding: 10px 20px;
+        border-radius: 5px;
+    }

@@ -1,6 +1,8 @@
 <?php
 session_start();
 $bdd = new PDO('mysql:host=localhost:8889;dbname=gamesoft;charset=utf8;', 'root', 'root');
+//$bdd = new PDO('mysql:host=sql113.infinityfree.com;dbname=if0_34998643_basetest;charset=utf8', 'if0_34998643', 'tImeLqNFXR');
+
 if(!$_SESSION['mdp']){
     header('Location: connexion-gamesoft.php');
 }
@@ -21,9 +23,19 @@ $sommeBudgets = 0;
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Classement des Jeux</title>
+    <title>Score des Jeux</title>
+    <link rel="stylesheet" href="score-jeux.css">
 </head>
 <body>
+    <header>
+        <nav class="menu">
+            <ul>
+            <li class="logo"><img src="IMAGES/LOGO.png" alt=""></li>
+            <li><a href="deconnexion.php">Déconnexion</a></li>
+            <li><a href="jeux.php">Voir jeux</a></li>
+            <li><a href="publier-jeux.php">Publier jeux</a></li>
+        </nav>
+    </header>
     <h1>SCORE DES JEUX</h1>
     <table>
         <tr>
@@ -34,10 +46,10 @@ $sommeBudgets = 0;
         </tr>
         <?php foreach ($jeux as $jeu) : ?>
             <tr>
-                <td><?php echo $jeu['titre']; ?></td>
-                <td><?php echo $jeu['date_creation']; ?></td>
-                <td><?php echo $jeu['likes']; ?></td>
-                <td><?php echo $jeu['budget']; ?></td>
+                <td style="color: white;"><?php echo $jeu['titre']; ?></td>
+                <td style="color: white;"><?php echo $jeu['date_creation']; ?></td>
+                <td style="color: white;"><?php echo $jeu['likes']; ?></td>
+                <td style="color: white;"><?php echo $jeu['budget']; ?></td>
             </tr>
             <?php
             // Ajouter le budget total
@@ -46,8 +58,8 @@ $sommeBudgets = 0;
         <?php endforeach; ?>
         <!-- Afficher la somme totale des budgets -->
         <tr>
-            <td colspan="3"><strong>TOTAL BUDGET</strong></td>
-            <td><?php echo $sommeBudgets; ?></td>
+            <td style="color: white;" colspan="3"><strong>TOTAL BUDGET</strong></td>
+            <td style="color: white;"><?php echo $sommeBudgets; ?></td>
         </tr>
     </table>
 </body>
