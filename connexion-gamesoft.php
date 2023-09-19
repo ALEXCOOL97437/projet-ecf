@@ -39,6 +39,10 @@ if(isset($_POST['connexion'])){
         //Recherche de l'utilisateur dans la base de données
         $recupUser = $bdd->prepare('SELECT * FROM users WHERE pseudo = ?');//('SELECT * FROM users WHERE pseudo = ? AND mdp = ?');
         $recupUser->execute(array($pseudo));//, $mdp));
+
+        //Recherche du manager dans la base de données
+        $recupManager = $bdd->prepare('SELECT * FROM manager WHERE pseudo = ?');
+        $recupManager->execute(array($pseudo));
         
         
         if($recupUserProducteur->rowCount() > 0){
@@ -68,13 +72,25 @@ if(isset($_POST['connexion'])){
             }else { 
                 echo '<script>alert("Mot de passe incorrect")</script>'; // Pour l'utilisateur
         }
+    }elseif ($recupManager->rowCount() > 0) {
+        $userInfos = $recupManager->fetch();
+        $mdp_stocke = $userInfos['mdp'];
+
+                if(password_verify($mdp_saisi, $mdp_stocke)){
+                $_SESSION['pseudo'] = $pseudo;
+                $_SESSION['mdp'] = $mdp_saisi;
+                $_SESSION['id'] = $userInfos['id'];
+                header('Location: espace-manager.php');
+                }else {
+                    echo '<srcipt>alert("Mot de passe incorrect")</script>'; // Pour le manager
+                }
+    }
     }else{
         echo '<script>alert("Identifiant incorrect")</script>';
     }
 
 }
     
-}
 
 
 //Pour utilisateur

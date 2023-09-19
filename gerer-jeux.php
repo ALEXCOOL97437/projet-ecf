@@ -20,7 +20,7 @@ if (isset($_GET['id']) && !empty($_GET['id'])) {
     if ($recupGames->rowCount() > 0) {
         // Récupérer les informations du jeu
         $gamesInfos = $recupGames->fetch();
-        $title = $gamesInfos['titre'];
+        //$title = $gamesInfos['titre'];
         $description = $gamesInfos['descriptif']; 
         $studio = $gamesInfos['studio'];
         $support = $gamesInfos['support'];
@@ -40,7 +40,7 @@ if (isset($_GET['id']) && !empty($_GET['id'])) {
         // Vérifier si le formulaire a été soumis
         if (isset($_POST['valider'])) {
             // Récupérer les données saisies par l'admin
-            $title_saisie = $_POST['titre'];
+           // $title_saisie = $_POST['titre'];
             $description_saisie = $_POST['descriptif'];
             $studio_saisie = $_POST['studio'];
             $support_saisie = $_POST['support'];
@@ -57,10 +57,10 @@ if (isset($_GET['id']) && !empty($_GET['id'])) {
 
 
             // Préparer une requête SQL pour mettre à jour le membre dans la base de données
-            $updateGames = $bdd->prepare('UPDATE games SET titre = ?, descriptif = ?, studio = ?,
+            $updateGames = $bdd->prepare('UPDATE games SET descriptif = ?, studio = ?,
             support = ?, priorite_developpement = ?, moteur = ?, date_creation = ?, date_maj = ?, date_sortie = ?,
             budget = ?, statut = ?, genre = ?, nombre_joueurs = ?, créateur_du_jeu = ? WHERE id = ?');
-            $updateGames->execute(array($title_saisie, $description_saisie, $studio_saisie, $support_saisie,
+            $updateGames->execute(array($description_saisie, $studio_saisie, $support_saisie,
             $priority_saisie, $motor_saisie, $creation_saisie, $update_saisie, $release_saisie,
             $budget_saisie, $status_saisie, $genre_saisie, $players_saisie, $creaters_saisie, $getid));
 
@@ -91,10 +91,10 @@ if (isset($_GET['id']) && !empty($_GET['id'])) {
         </nav>
     </header>
     <form method="POST" action="" class="form-container">
-         <div class="input-group">
+        <!-- <div class="input-group">
             <label for="title">Ajouter un Titre</label>
             <input type="text" id="title" name="titre" value="<?php echo $title; ?>">
-         </div>
+         </div> -->
         <div class="input-group">
             <label for="description">A propos du jeu</label>
             <input type="text" id="description" name="descriptif" value="<?php echo $description; ?>">     

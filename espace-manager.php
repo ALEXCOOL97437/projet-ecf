@@ -16,7 +16,7 @@ if(!$_SESSION['mdp']){
     <head>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Espace admin</title>
+        <title>Espace manager</title>
         <link rel="stylesheet" href="admin.css">
     </head>
 <body>
@@ -25,37 +25,11 @@ if(!$_SESSION['mdp']){
             <ul>
             <li class="logo"><img src="IMAGES/LOGO.png" alt=""></li>
             <li><a href="deconnexion.php">Déconnexion</a></li>
-            <li><a href="membres.php">Membres</a></li>
-            <li><a href="publier-membres.php">Publier membres</a></li>
-            <li><a href="publier-manager.php">Publier manager</a></li>
-            <li><a href="jeux.php">Voir jeux</a></li>
-            <li><a href="publier-jeux.php">Publier jeux</a></li>
+            <li><a href="actualites.php">Fil d'actualités</a></li>
             <li><a href="score-jeux.php">Score des jeux</a></li>
           
         </nav>
     </header>
 
-<!--<a href="deconnexion.php">
-   <button>Se déconnecter</button>
-</a>
-<br>
-<a href="membres.php">
-    <button>Afficher tous les membres</button>
-</a>
-<br>
-<a href="publier-membres.php">
-    <button>Publier membres</button>
-</a>
-<br>
-<a href="publier-jeux.php">
-    <button>Publier jeux</button>
-</a>
-<br>
-<a href="jeux.php">
-    <button>Afficher tous les jeux</button>
-</a>
-<br>
-
-<a href="score-jeux.php"><button>Afficher score des jeux</button></a> -->
 </body>
 </html>

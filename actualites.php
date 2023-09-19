@@ -27,7 +27,6 @@ if(!$_SESSION['mdp']){
             <ul>
             <li class="logo"><img src="IMAGES/LOGO.png" alt=""></li>
             <li><a href="deconnexion.php">Déconnexion</a></li>
-            <li><a href="publier-jeux.php">Publier jeux</a></li>
             <li><a href="score-jeux.php">Score des jeux</a></li>
           
         </nav>
@@ -40,10 +39,8 @@ if(!$_SESSION['mdp']){
     ?>
  <div class="jeux" style="border: 1px solid black;">
     <p style="color: white;"><?php echo $games['titre']; ?></p>
-     <a href="supprimer-jeux.php?id=<?= $games['id']; ?>">
-     <button style="color:white; background-color: red; margin-bottom: 10px;">Supprimer le jeu</button></a> <!-- ce code affiche le pseudo de l'utilisateur dans un paragraphe HTML et fournit également un lien hypertexte vers un script de bannissement en utilisant l'ID de l'utilisateur comme paramètre dans l'URL. -->
-    <a href="gerer-jeux.php?id=<?= $games['id']; ?>">
-    <button style="color:white; background-color: blue; margin-bottom: 10px;">Modifier le jeu</button></a></p>
+     <a href="publier-actualites.php?id=<?= $games['id']; ?>">
+     <button style="color:black; background-color: yellow; margin-bottom: 10px;">Mettre une news</button></a> <!-- ce code affiche le pseudo de l'utilisateur dans un paragraphe HTML et fournit également un lien hypertexte vers un script de bannissement en utilisant l'ID de l'utilisateur comme paramètre dans l'URL. -->
     <a href="infos-jeux.php?id=<?= $games['id']; ?>">
     <button style="color:white; background-color: orange; margin-bottom: 10px;">Infos du jeu</button></a></p>
  </div>

@@ -52,6 +52,22 @@ $bdd = new PDO('mysql:host=localhost:8889;dbname=gamesoft;charset=utf8;', 'root'
          avec des organisations environnementales. Ensemble, nous pouvons prouver que le jeu vidéo
          peut être un outil puissant pour inspirer des changements positifs et durables pour
          notre planète."</p>
+         <br>
+         <br>
+    
+    
+<!-- Afficher tous les membres -->
+<?php
+   $recupNews = $bdd->query('SELECT * FROM actualites ORDER BY date DESC');
+   while($news = $recupNews->fetch()){ // Boucle pour récupérer les jeux de la table
+   ?>
+   <div class="news" style="border: 2px solid black; margin-bottom: 10px; padding: 10px;">
+   <h3 style="color:thistle;">DATE : <?php echo $news['date']; ?></h3>
+    <h2 style="color:gold;">JEU : <?php echo $news['titre']; ?></h2>
+    <h3 style="color:white;">Nouveautés : <?php echo $news['news']; ?></h3>
+   </div>
+    <?php } ?>
+
 <script src="gamesoft-page-accueil.js"></script>
 </body>
 </html>

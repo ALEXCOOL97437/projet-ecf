@@ -20,7 +20,7 @@ if (isset($_GET['id']) && !empty($_GET['id'])) {
             $date = $avisInfo['date'];
 
             // Afficher les avis
-            echo '<div class="game-info" style="border: 2px solid black;">';
+            echo '<div class="game-info" style="border: 2px solid black; margin-bottom: 10px;  padding: 10px;">';
             echo '<p>Date :'.$date .'</p>';
             echo '<h1>'.$pseudo .'</h1>';
             echo '<p>Avis :'.$avis .'</p>';
@@ -33,3 +33,5 @@ if (isset($_GET['id']) && !empty($_GET['id'])) {
     echo "Aucun jeu trouvé.";
 }
 ?>
+
+

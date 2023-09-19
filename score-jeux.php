@@ -32,8 +32,6 @@ $sommeBudgets = 0;
             <ul>
             <li class="logo"><img src="IMAGES/LOGO.png" alt=""></li>
             <li><a href="deconnexion.php">Déconnexion</a></li>
-            <li><a href="jeux.php">Voir jeux</a></li>
-            <li><a href="publier-jeux.php">Publier jeux</a></li>
         </nav>
     </header>
     <h1>SCORE DES JEUX</h1>
