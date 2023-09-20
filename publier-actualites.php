@@ -62,8 +62,8 @@ if (isset($_POST['envoi'])) {
         <nav class="menu">
             <ul>
             <li class="logo"><img src="IMAGES/LOGO.png" alt=""></li>
-            <li><a href="gamesoft-page-accueil.php">Accueil</a></li>
-            <li><a href="tous-les-jeux.php">JEUX</a></li>
+            <li><a href="deconnexion.php">Déconnexion</a></li>
+            <li><a href="score-jeux.php">Score des jeux</a></li>
             </ul>
         </nav>
     </header>
