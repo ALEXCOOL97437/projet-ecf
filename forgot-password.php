@@ -1,4 +1,5 @@
 <?php
+session_start();
 $bdd = new PDO('mysql:host=localhost:8889;dbname=gamesoft;charset=utf8;', 'root', 'root');
 
 ?>
@@ -35,11 +36,12 @@ $bdd = new PDO('mysql:host=localhost:8889;dbname=gamesoft;charset=utf8;', 'root'
 <?php
 
 if (isset($_POST['email'])) {
-  $password = uniqid();
-  echo $password;
-    // Générer un mot de passe aléatoire sécurisé
+  //$password = uniqid();// Générer un mot de passe aléatoire sécurisé
+  //echo $password;
+    
    $length = 6; // Longueur du mot de passe
    $randomPassword = bin2hex(random_bytes($length));
+   echo $randomPassword;
 
     // Hacher le mot de passe
     //$hashedPassword = sha1($randomPassword);

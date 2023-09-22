@@ -23,7 +23,7 @@ if(isset($_POST['connexion'])){
     }
 }
 
-//Pour producteurs et utilisateurs
+//Pour producteurs, manageurs et utilisateurs
 if(isset($_POST['connexion'])){
     if(!empty($_POST['pseudo']) AND !empty($_POST['mdp'])){
         $pseudo = htmlspecialchars($_POST['pseudo']);
@@ -164,7 +164,7 @@ if(isset($_POST['connexion'])){
         <div class="input-action">
             <button type="submit" id="buttonConnexion" name="connexion">Se connecter</button>
         <br><br>
-        <span class="forgot-password"><a href="forgot_password.php">Mot de passe oublié ?</a></span>
+        <span class="forgot-password"><a href="forgot-password.php">Mot de passe oublié ?</a></span>
       </div>
      </form>
 </div>
