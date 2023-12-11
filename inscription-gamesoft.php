@@ -35,11 +35,12 @@ if(isset($_POST['registrer'])){
 }
 ?>
 <!DOCTYPE html>
-<html>
+<html lang="fr">
     <head>
-        <link rel="stylesheet" href="inscription-gamesoft.css">
-        <title>Inscription</title>
         <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Inscription</title>
+        <link rel="stylesheet" href="inscription-gamesoft.css">
     </head>
 <body>
 <header>
@@ -47,13 +48,13 @@ if(isset($_POST['registrer'])){
             <ul>
             <li class="logo"><img src="IMAGES/LOGO.png" alt=""></li>
             <li><a href="gamesoft-page-accueil.php">Accueil</a></li>
-            <li><a href="tous-les-jeux.html">JEUX</a></li>
+            <li><a href="tous-les-jeux.php">JEUX</a></li>
             </ul>
             <div class="connect"><a href="connexion-gamesoft.php"><img src="IMAGES/LOGO SE CONNECTER.png" alt=""></a></div>
         </nav>
     </header>
 
-    <form method="POST" action=""> <!-- Si fichier externe remplir action"" -->
+    <form method="POST" action="" id="inscriptionForm"> <!-- Si fichier externe remplir action"" -->
 
         <div class="input-group">
             <label for="identifiant">Votre identifiant ou PSEUDO</label>
@@ -63,13 +64,13 @@ if(isset($_POST['registrer'])){
         <br> 
         <div class="input-group">
             <label for="password">Votre mot de passe</label>
-            <input type="password" id="password" name="mdp" required minlength="6">
+            <input type="password" id="password" name="mdp" required minlength="10">
         </div>
         <div id="errorPassword" class="error-message"></div>
         <br>
         <div class="input-group">
             <label for="password">Confirmation mot de passe</label>
-            <input type="password" id="confirmPassword" name="confirmPassword" required minlength="6">
+            <input type="password" id="confirmPassword" name="confirmPassword" required minlength="10">
         </div>
         <div id="errorConfirmPassword" class="error-message"></div>
         <br>
@@ -91,6 +92,6 @@ if(isset($_POST['registrer'])){
         <br>
         <!--<input type="submit" name="enregistrer"> -->
     </form>
-    <script src="inscription-gamesoft.js"></script>
+    <script src="inscription-gamesoft2.js"></script>
 </body>
 </html>

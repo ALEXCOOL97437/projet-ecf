@@ -8,7 +8,8 @@ password.addEventListener('input', (event) => {
     } else {
         errorPassword.innerText = ''
     }
-});
+})
+;
 
  //Pour confirmation mot de passe
 const confirmPassword = document.getElementById('confirmPassword')
