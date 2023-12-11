@@ -35,7 +35,7 @@ if(isset($_POST['registrer'])){
 }
 ?>
 <!DOCTYPE html>
-<html>
+<html lang="fr">
     <head>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -54,7 +54,7 @@ if(isset($_POST['registrer'])){
         </nav>
     </header>
 
-    <form method="POST" action=""> <!-- Si fichier externe remplir action"" -->
+    <form method="POST" action="" id="inscriptionForm"> <!-- Si fichier externe remplir action"" -->
 
         <div class="input-group">
             <label for="identifiant">Votre identifiant ou PSEUDO</label>
@@ -64,13 +64,13 @@ if(isset($_POST['registrer'])){
         <br> 
         <div class="input-group">
             <label for="password">Votre mot de passe</label>
-            <input type="password" id="password" name="mdp" required minlength="6">
+            <input type="password" id="password" name="mdp" required minlength="10">
         </div>
         <div id="errorPassword" class="error-message"></div>
         <br>
         <div class="input-group">
             <label for="password">Confirmation mot de passe</label>
-            <input type="password" id="confirmPassword" name="confirmPassword" required minlength="6">
+            <input type="password" id="confirmPassword" name="confirmPassword" required minlength="10">
         </div>
         <div id="errorConfirmPassword" class="error-message"></div>
         <br>
@@ -92,6 +92,6 @@ if(isset($_POST['registrer'])){
         <br>
         <!--<input type="submit" name="enregistrer"> -->
     </form>
-    <script src="inscription-gamesoft.js"></script>
+    <script src="inscription-gamesoft2.js"></script>
 </body>
 </html>
